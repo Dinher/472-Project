@@ -190,7 +190,8 @@ Player {} : {}""".format(x+1,x%2+1,y))
         if not curr_ai:
             command = input("[{}'s Turn] Place your move: ".format("Player {}".format(curr_player)))
         else:
-            command = getNextMove(self.board, self.trace, False)
+            ai_type = 0 if self.player_option == 1 else 1
+            command = getNextMove(self.board, ai_type, self.trace, False)
             # command = "0 2 A 1" # TODO place output of minimax algo here
             print("[AI's Turn] Place your move: {}".format(command))
         self.flush()
